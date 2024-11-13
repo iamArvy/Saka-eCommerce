@@ -44,15 +44,6 @@ class User extends Authenticatable
     ];
 
     /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array<int, string>
-     */
-    protected $appends = [
-        'profile_photo_url',
-    ];
-
-    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
@@ -63,5 +54,25 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function cart()
+    {
+        return $this-hasMany(Cart::class);
+    }
+
+    public function getCartSum()
+    {
+        return $this->cart()->sum('quantity');
+    }
+
+    public function getCartTotal()
+    {
+        return $this->cart()->sum('total');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
     }
 }
