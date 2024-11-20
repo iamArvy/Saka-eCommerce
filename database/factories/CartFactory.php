@@ -20,7 +20,7 @@ class CartFactory extends Factory
             'user_id' => \App\Models\User::factory(),
             'product_id' => \App\Models\Product::factory(),
             'variant_id' => \App\Models\Variant::factory(),
-            'quantity' => $this->faker->numberBetween(1, 10),
+            'quantity' => fake()->numberBetween(1, 10),
         ];
     }
 }

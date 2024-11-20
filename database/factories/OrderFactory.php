@@ -18,7 +18,7 @@ class OrderFactory extends Factory
     {
         return [
             'user_id' => \App\Models\User::factory(),
-            'status' => $this->faker->randomElement(['pending', 'processing', 'shipped', 'delivered', 'cancelled']),
+            'status' => fake()->randomElement(['pending', 'processing', 'shipped', 'delivered', 'cancelled']),
         ];
     }
 }

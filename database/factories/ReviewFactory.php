@@ -19,8 +19,8 @@ class ReviewFactory extends Factory
         return [
             'user_id' => \App\Models\User::factory(),
             'product_id' => \App\Models\Product::factory(),
-            'comment' => $this->faker->text,
-            'rating' => $this->faker->numberBetween(1, 5),
+            'comment' => fake()->text,
+            'rating' => fake()->numberBetween(1, 5),
         ];
     }
 }

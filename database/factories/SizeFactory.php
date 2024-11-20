@@ -17,8 +17,8 @@ class SizeFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->unique()->randomElement(['small', 'medium', 'large', 'extra large', 'extra extra large']),
-            'code' => $this->faker->unique()->randomElement(['S', 'M', 'L', 'XL', 'XXL']),
+            'name' => fake()->unique()->randomElement(['small', 'medium', 'large', 'extra large', 'extra extra large']),
+            'code' => fake()->unique()->randomElement(['S', 'M', 'L', 'XL', 'XXL']),
         ];
     }
 }

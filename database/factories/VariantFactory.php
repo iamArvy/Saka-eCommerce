@@ -20,9 +20,9 @@ class VariantFactory extends Factory
             'product_id' => \App\Models\Product::factory(),
             'size_id' => \App\Models\Size::factory(),
             'color_id' => \App\Models\Color::factory(),
-            'price' => $this->faker->randomFloat(2, 10, 1000),
-            'stock' => $this->faker->numberBetween(0, 100),
-            'is_active' => $this->faker->boolean,
+            'price' => fake()->randomFloat(2, 10, 1000),
+            'stock' => fake()->numberBetween(0, 100),
+            'is_active' => fake()->boolean,
         ];
     }
 }
